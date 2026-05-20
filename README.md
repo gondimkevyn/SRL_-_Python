@@ -1,9 +1,3 @@
-Com base no material fornecido da disciplina do Prof. Edjard Mota, o objetivo do projeto é construir um sistema híbrido de **Aprendizado Relacional Estatístico (SRL)**. Esse sistema une o poder de representação estruturada do **Prolog** (para tratar grafos sociais complexos) com a calibração numérica de incertezas do **Python** (via Regressão Logística no Scikit-Learn).
-
-Abaixo está o guia passo a passo detalhado e explicado para a resolução completa do projeto, dividido entre os dois arquivos entregáveis e pronto para ser executado.
-
----
-
 ## Parte 1: Base de Fatos e Regras Lógicas (`rede_social.pl`)
 
 O objetivo desta parte em Prolog é mapear as interações financeiras e calcular de forma **recursiva** o grau de distância (proximidade) de qualquer usuário em relação a uma entidade de risco conhecido (no exemplo fornecido, o `daniel`).
