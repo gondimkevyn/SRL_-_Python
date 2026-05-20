@@ -2,8 +2,6 @@
 
 O objetivo desta parte em Prolog é mapear as interações financeiras e calcular de forma **recursiva** o grau de distância (proximidade) de qualquer usuário em relação a uma entidade de risco conhecido (no exemplo fornecido, o `daniel`).
 
-O código do slide original possui pequenas falhas de sintaxe e truncamentos devido à extração de texto (como `1) :- ...` e variáveis anônimas incompletas). Abaixo está a implementação corrigida, limpa e funcional:
-
 ```prolog
 % =====================================================================
 % Fatos: Conexões Diretas (Grafo Social) e Inadimplência Clássica
@@ -136,11 +134,3 @@ Se o modelo calcular que o risco é de, por exemplo, 0.82, a saída gerada será
 `0.82 :: risco(cliente_novo) :- conectado_a(cliente_novo, daniel, 2).`
 
 ---
-
-## 💡 Análise Crítica e Critérios de Sucesso (Para a Rubrica)
-
-Ao finalizar o relatório ou a apresentação do seu projeto, certifique-se de ressaltar estes três pontos cruciais exigidos na rubrica de avaliação:
-
-1. **Explicabilidade (XAI) e Auditoria:** Sistemas baseados puramente em Deep Learning funcionam como caixas-pretas. Ao usar SRL (Statistical Relational Learning), se um cliente tiver seu crédito negado, você pode auditar e explicar exatamente o motivo humano: *"O crédito foi negado porque você possui score X, e está a apenas 2 graus de distância de uma transação com uma entidade inadimplente ativa"*.
-2. **Tratamento do Ruído:** O Prolog puro trabalha sob a hipótese de mundo fechado (se não está na base, o risco é zero ou erro). A inteligência híbrida mitiga isso usando a probabilidade da Regressão Logística para suavizar as arestas rígidas da lógica booleana tradicional.
-3. **Ponte de Dados:** O `pyswip` atua como o tradutor que transforma estruturas de grafos complexas (difíceis de tratar em tabelas SQL comuns) em dados numéricos lineares vetorizados (`grau_risco_rede`) assimiláveis pelo Pandas e Scikit-Learn.
